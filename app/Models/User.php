@@ -19,6 +19,7 @@ class User extends Authenticatable
     const REMEMBER_TOKEN    =   'rememberToken';
     const CREATED_AT        =   'createdAt';
     const UPDATED_AT        =   'updatedAt';
+    const SESSION_ID        =   'sessionId';
 
     use HasApiTokens, HasFactory, Notifiable;
 

@@ -9,6 +9,7 @@ class CashierController extends Controller
 {
     public function index()
     {
-        dd('cashier');
+        $user = auth()->user();
+        return 'cashier';
     }
 }
