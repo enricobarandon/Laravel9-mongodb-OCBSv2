@@ -10,6 +10,10 @@ class CashierController extends Controller
     public function index()
     {
         $user = auth()->user();
-        return 'cashier';
+        if ($user->is_allowed == 1) {
+            return response()->view('backend.cashier.index', [], 404);
+        }
+        // return $user->user_type->role;
+        return response()->view('backend.cashier.waiting', [], 404);
     }
 }

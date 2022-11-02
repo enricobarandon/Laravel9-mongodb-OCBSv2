@@ -31,6 +31,7 @@ class Role
             if ($user->hasRole($role)) {
                 return $next($request);
             }
+            // continue;
         }
 
         return redirect('/home')->with('error','Access denied');
