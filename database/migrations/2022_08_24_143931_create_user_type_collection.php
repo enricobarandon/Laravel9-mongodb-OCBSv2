@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('usertypes', function (Blueprint $collection) {
+        Schema::create('user_types', function (Blueprint $collection) {
             $collection->id();
             $collection->string('role');
             $collection->timestamps();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_type_collection');
+        Schema::dropIfExists('user_types');
     }
 };

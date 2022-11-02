@@ -16,12 +16,21 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\User::factory()->create([
-            'firstName'     =>      'Foo',
-            'middleName'    =>      'D',
-            'lastName'      =>      'Bar',
-            'username'      =>      'kikoadmin',
-            'email'         =>      'kiko@lucky8',
-            'userTypeId'    =>      1
+            'first_name'        =>      'Foo',
+            'middle_name'       =>      'D',
+            'last_name'         =>      'Bar',
+            'username'          =>      'kikoadmin',
+            'email'             =>      'kiko@lucky8',
+            'user_type_id'      =>      1
+        ]);
+
+        \App\Models\User::factory()->create([
+            'first_name'        =>      'Cashier',
+            'middle_name'       =>      'And',
+            'last_name'         =>      'Teller',
+            'username'          =>      'cashier',
+            'email'             =>      'cashierteller@lucky8',
+            'user_type_id'      =>      4
         ]);
 
         $this->call(UserTypeSeeder::class);

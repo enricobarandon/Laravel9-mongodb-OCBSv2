@@ -10,10 +10,7 @@ class UserType extends Eloquent
 {
     use HasFactory;
 
-    protected $collection = 'usertypes';
+    protected $collection = 'user_types';
 
     protected $fillable = ['id','role'];
-    
-    const CREATED_AT = 'createdAt';
-    const UPDATED_AT = 'updatedAt';
 }

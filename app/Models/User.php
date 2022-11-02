@@ -16,10 +16,10 @@ class User extends Authenticatable
     protected $connection = 'mongodb';
     protected $collection = 'users';
 
-    const REMEMBER_TOKEN    =   'rememberToken';
-    const CREATED_AT        =   'createdAt';
-    const UPDATED_AT        =   'updatedAt';
-    const SESSION_ID        =   'sessionId';
+    // const REMEMBER_TOKEN    =   'rememberToken';
+    // const CREATED_AT        =   'createdAt';
+    // const UPDATED_AT        =   'updatedAt';
+    // const SESSION_ID        =   'sessionId';
 
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -29,9 +29,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'firstName',
-        'middleName',
-        'lastName',
+        'first_name',
+        'middle_name',
+        'last_name',
         'email',
         'username',
         'password',
@@ -44,7 +44,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'rememberToken',
+        'remember_token',
     ];
 
     /**
@@ -53,12 +53,12 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'emailVerifiedAt' => 'datetime',
+        'email_verified_at' => 'datetime',
     ];
 
     public function user_type()
     {
-        return $this->belongsTo(UserType::class, 'userTypeId', 'id');
+        return $this->belongsTo(UserType::class,'user_type_id','id');
     }
 
     public function isAdmin()
